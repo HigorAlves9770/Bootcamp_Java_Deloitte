@@ -1,4 +1,6 @@
-# 🚀 Java Learning Repository – Deloitte
+<h1> 🚀 Java Learning Repository – Deloitte <img src="https://cdn.iconscout.com/icon/free/png-256/java-43-569305.png" width="40"> </h1>
+
+
 
 📌 Este repositório foi criado com o objetivo de organizar, documentar e evoluir meus estudos e práticas em Java, desenvolvidos durante minha atuação/projeto na Deloitte. Aqui você encontrará exemplos práticos, conceitos fundamentais e implementações que seguem boas práticas de desenvolvimento, com foco em qualidade de código, organização e aprendizado contínuo.
 
