@@ -15,6 +15,7 @@ Praticar boas práticas de desenvolvimento
 Servir como material de consulta e evolução técnica
 
 Demonstrar organização e clareza em projetos Java
+
 ## 📚 Conteúdos Abordados
 
 Sintaxe básica do Java
@@ -23,16 +24,7 @@ Programação Orientada a Objetos
 
 Encapsulamento, Herança e Polimorfismo
 
-Collections (List, Set, Map)
-
-Tratamento de Exceções
-
-Streams e Expressões Lambda
-
 Boas práticas e organização de código
-
-Testes unitários
-
 
 ## 🛠️ Tecnologias Utilizadas
 
