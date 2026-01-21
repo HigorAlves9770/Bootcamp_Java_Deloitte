@@ -13,6 +13,7 @@ public class Passageiro {
     public Passageiro(){
 
     }
+
     public Passageiro(String nomeCompleto, int CPF, int dataNascimento, int telefone, int numeroPassaporte, int validadePassaporte){
         this.nomeCompleto = nomeCompleto;
         this.CPF = CPF;
