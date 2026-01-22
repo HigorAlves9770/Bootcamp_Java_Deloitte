@@ -1,42 +1,32 @@
 <h1> 🚀 Java Learning Repository – Deloitte <img src="https://cdn.iconscout.com/icon/free/png-256/java-43-569305.png" width="40"> </h1>
 
+📌 This repository was created with the purpose of organizing, documenting, and evolving my Java studies and practices developed during my work/project at Deloitte. Here you will find practical examples, fundamental concepts, and implementations that follow good development practices, with a focus on code quality, organization, and continuous learning.
 
+## 📂 Repository Goals
 
-📌 Este repositório foi criado com o objetivo de organizar, documentar e evoluir meus estudos e práticas em Java, desenvolvidos durante minha atuação/projeto na Deloitte. Aqui você encontrará exemplos práticos, conceitos fundamentais e implementações que seguem boas práticas de desenvolvimento, com foco em qualidade de código, organização e aprendizado contínuo.
+Consolidate Java knowledge
 
-## 📂 Objetivos do Repositório
+Apply Object-Oriented Programming (OOP) concepts
 
-Consolidar conhecimentos em Java
+Practice good development practices
 
-Aplicar conceitos de Programação Orientada a Objetos (POO)
+Serve as reference material for technical growth
 
-Praticar boas práticas de desenvolvimento
+Demonstrate organization and clarity in Java projects
 
-Servir como material de consulta e evolução técnica
+## 📚 Covered Topics
 
-Demonstrar organização e clareza em projetos Java
-## 📚 Conteúdos Abordados
+Basic Java syntax
 
-Sintaxe básica do Java
+Object-Oriented Programming
 
-Programação Orientada a Objetos
+Encapsulation, Inheritance, and Polymorphism
 
-Encapsulamento, Herança e Polimorfismo
+Good practices and code organization
 
-Collections (List, Set, Map)
+## 🛠️ Technologies Used
 
-Tratamento de Exceções
-
-Streams e Expressões Lambda
-
-Boas práticas e organização de código
-
-Testes unitários
-
-
-## 🛠️ Tecnologias Utilizadas
-
-Java (JDK 8+ / 11 / 17 – conforme os exemplos)
+Java (JDK 8+ / 11 / 17 – depending on the examples)
 
 IDE: IntelliJ IDEA / Eclipse / VS Code
 
@@ -48,6 +38,6 @@ IDE: IntelliJ IDEA / Eclipse / VS Code
 <h5>📌 LinkedIn: <a href="https://www.linkedin.com/in/higor-cabrall/" target="_blank">Higor Cabral</a></h5>
 
 
-## 🏢 Observação
+## 🏢 Disclaimer
 
-Este repositório tem finalidade educacional e profissional. Nenhuma informação confidencial ou proprietária da Deloitte é compartilhada.
+This repository is intended for educational and professional purposes only. No confidential or proprietary Deloitte information is shared.
