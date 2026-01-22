@@ -1,4 +1,3 @@
-/* Centraliza o formulário */
 body {
     min-height: 100vh;
     display: flex;
@@ -10,52 +9,51 @@ body {
     background-position: center;
 }
 
-/* Card do formulário menor */
 form#formCadastro {
     width: 100%;
-    max-width: 340px; /* ↓ tamanho reduzido */
+    max-width: 340px;
     padding: 20px !important;
     border-radius: 14px;
 }
 
-/* Título menor */
+
 form h4 {
     font-size: 1.1rem;
     margin-bottom: 1.2rem;
 }
 
-/* Labels mais compactas */
+
 .form-label {
     font-size: 0.8rem;
     margin-bottom: 4px;
     font-weight: 500;
 }
 
-/* Inputs mais baixos */
+
 .form-control {
     font-size: 0.85rem;
     padding: 6px 8px;
 }
 
-/* Ícones do input-group */
+
 .input-group-text {
     padding: 6px 10px;
     font-size: 0.85rem;
 }
 
-/* Espaçamento entre campos */
+
 .mb-3 {
     margin-bottom: 0.7rem !important;
 }
 
-/* Botão menor e elegante */
+
 button.btn {
     font-size: 0.85rem;
     padding: 8px;
     border-radius: 10px;
 }
 
-/* Sombra mais suave */
+
 .shadow {
     box-shadow: 0 10px 25px rgba(0,0,0,0.25) !important;
 }
