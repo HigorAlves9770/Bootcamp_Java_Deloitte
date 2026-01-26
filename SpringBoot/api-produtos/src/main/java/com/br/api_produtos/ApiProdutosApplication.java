@@ -1,8 +1,7 @@
-package com.br.api_produtos;
+package com.br.api_produtos.Repository;
 
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.br.api_produtos.Model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
 @SpringBootApplication

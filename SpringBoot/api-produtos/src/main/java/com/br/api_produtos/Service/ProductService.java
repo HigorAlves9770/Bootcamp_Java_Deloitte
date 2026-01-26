@@ -1,47 +1,40 @@
 package com.br.api_produtos.Service;
 
 import com.br.api_produtos.Model.Product;
+import com.br.api_produtos.Repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ProductService {
 
-    private final List<Product> products = new ArrayList<>();
-    private Long nextId = 1L;
+    private final ProductRepository repository;
 
-    // Create a new product
-    public Product create(Product product) {
-        product.setId(nextId++);
-        products.add(product);
-        return product;
+    public ProductService(ProductRepository repository) {
+        this.repository = repository;
     }
 
-    // Return a product by ID
+    public Product create(Product product) {
+        return repository.save(product);
+    }
+
     public Product findById(Long id) {
-        return products.stream()
-                .filter(product -> product.getId().equals(id))
-                .findFirst()
+        return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
     }
 
-    // Update product by id
     public Product update(Long id, Product product) {
         Product existing = findById(id);
         existing.setName(product.getName());
         existing.setPrice(product.getPrice());
-        return existing;
+        return repository.save(existing);
     }
 
-    // Return all products
     public List<Product> returnAll() {
-        return products;
+        return repository.findAll();
     }
 
-    // Delete product by id
     public void delete(Long id) {
-        products.removeIf(product -> product.getId().equals(id));
-    }
+        repository.deleteById(id);
 }
