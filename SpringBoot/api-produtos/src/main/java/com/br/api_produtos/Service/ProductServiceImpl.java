@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// Classe responsável pela implementação da camada de serviço do Produto.
+// Class responsible for the implementation of the product service layer.
+
 @Service
 public class ProductServiceImpl implements ProductService {
 

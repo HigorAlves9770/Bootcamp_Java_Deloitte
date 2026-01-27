@@ -7,6 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// A classe responsável pelo modelo produtos e seus atributos (name, price e id)
+// here is the Products model and its attributes (name, price and id)
+
 @Entity
 @Table(name = "products")
 public class Product {

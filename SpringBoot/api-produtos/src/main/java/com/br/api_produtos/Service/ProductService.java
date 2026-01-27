@@ -5,6 +5,9 @@ import com.br.api_produtos.dto.ProductResponseDTO;
 
 import java.util.List;
 
+// Interface responsável pelo contrato da camada de serviço para Product
+// Interface responsible for defining the service layer contract for Product
+
 public interface ProductService {
 
     ProductResponseDTO create(ProductRequestDTO dto);

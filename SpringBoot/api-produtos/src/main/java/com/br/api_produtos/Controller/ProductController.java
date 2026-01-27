@@ -8,6 +8,12 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+/* Classe responsável por receber as requisições HTTP, validar os dados e delegar as regras de negócio
+para a camada de serviço (ProductService) */
+
+/*Class responsible for handling HTTP requests, validating data, and delegating business rules to the service layer (ProductService) */
+
+
 import java.util.List;
 
 @RestController

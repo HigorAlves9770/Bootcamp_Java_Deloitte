@@ -1,6 +1,7 @@
 package com.br.api_produtos.dto;
 
-//Representa o que a API escolhe expor e pode ocultar campos sensíveis
+// A classe ProductResponseDTO representa o que a API escolhe expor ao cliente e o que abstrair numa resposta
+// This class represents what the API chooses to expose to the client and can hide sensitive fields
 
 public class ProductResponseDTO {
 
