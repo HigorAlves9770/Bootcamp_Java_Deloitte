@@ -4,6 +4,7 @@ import com.br.api_produtos.Model.Product;
 import com.br.api_produtos.Service.ProductService;
 import com.br.api_produtos.dto.ProductRequestDTO;
 import com.br.api_produtos.dto.ProductResponseDTO;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProductResponseDTO create(@RequestBody @valid ProductRequestDTO dto) {
+    public ProductResponseDTO create(@RequestBody @Valid ProductRequestDTO dto) {
         return service.create(dto);
     }
 
