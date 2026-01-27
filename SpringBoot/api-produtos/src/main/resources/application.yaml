@@ -1,12 +1,22 @@
+server:
+  port: 8081
+
 spring:
+<<<<<<< HEAD
   application:
     name: api-produtos
 
+=======
+>>>>>>> main
   datasource:
     url: jdbc:h2:mem:produtosdb
     driver-class-name: org.h2.Driver
     username: sa
+<<<<<<< HEAD
     password: ""
+=======
+    password:
+>>>>>>> main
 
   jpa:
     hibernate:
