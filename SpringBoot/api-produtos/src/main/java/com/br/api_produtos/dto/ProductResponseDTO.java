@@ -1,7 +1,6 @@
 package com.br.api_produtos.dto;
 
-//Representa o que a API escolhe expor
-//Pode ocultar campos sensíveis
+//Representa o que a API escolhe expor e pode ocultar campos sensíveis
 
 public class ProductResponseDTO {
 
