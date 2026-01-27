@@ -2,6 +2,8 @@ package com.br.api_produtos.Controller;
 
 import com.br.api_produtos.Model.Product;
 import com.br.api_produtos.Service.ProductService;
+import com.br.api_produtos.dto.ProductRequestDTO;
+import com.br.api_produtos.dto.ProductResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,32 +19,30 @@ public class ProductController {
         this.service = service;
     }
 
-    // CREATE
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody Product product) {
-        return service.create(product);
+    public ProductResponseDTO create(@RequestBody @valid ProductRequestDTO dto) {
+        return service.create(dto);
     }
 
-    // READ BY ID
     @GetMapping("/{id}")
-    public Product findById(@PathVariable Long id) {
+    public ProductResponseDTO findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
-    // READ ALL
     @GetMapping
-    public List<Product> returnAll() {
-        return service.returnAll();
+    public List<ProductResponseDTO> findAll() {
+        return service.findAll();
     }
 
-    // UPDATE
     @PutMapping("/{id}")
-    public Product update(@PathVariable Long id, @RequestBody Product product) {
-        return service.update(id, product);
+    public ProductResponseDTO update(
+            @PathVariable Long id,
+            @RequestBody @Valid ProductRequestDTO dto
+    ) {
+        return service.update(id, dto);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {

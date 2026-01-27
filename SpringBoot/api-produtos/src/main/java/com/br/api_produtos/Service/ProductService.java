@@ -2,6 +2,8 @@ package com.br.api_produtos.Service;
 
 import com.br.api_produtos.Model.Product;
 import com.br.api_produtos.Repository.ProductRepository;
+import com.br.api_produtos.dto.ProductRequestDTO;
+import com.br.api_produtos.dto.ProductResponseDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,35 +17,49 @@ public class ProductService {
         this.repository = repository;
     }
 
-    // CREATE
-    public Product create(Product product) {
-        return repository.save(product);
+    public ProductResponseDTO create(ProductRequestDTO dto) {
+        Product product = new Product();
+        product.setName(dto.getName());
+        product.setPrice(dto.getPrice());
+
+        Product saved = repository.save(product);
+
+        return toResponseDTO(saved);
     }
 
-    // READ BY ID
-    public Product findById(Long id) {
-        return repository.findById(id)
+    public List<ProductResponseDTO> findAll() {
+        return repository.findAll()
+                .stream()
+                .map(this::toResponseDTO)
+                .toList();
+    }
+
+    public ProductResponseDTO findById(Long id) {
+        Product product = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+        return toResponseDTO(product);
     }
 
-    // READ ALL
-    public List<Product> returnAll() {
-        return repository.findAll();
+    public ProductResponseDTO update(Long id, ProductRequestDTO dto) {
+        Product product = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+        product.setName(dto.getName());
+        product.setPrice(dto.getPrice());
+
+        return toResponseDTO(repository.save(product));
     }
 
-    // UPDATE
-    public Product update(Long id, Product product) {
-        Product existing = findById(id);
-
-        existing.setName(product.getName());
-        existing.setPrice(product.getPrice());
-
-        return repository.save(existing);
-    }
-
-    // DELETE
     public void delete(Long id) {
-        Product product = findById(id);
-        repository.delete(product);
+        repository.deleteById(id);
+    }
+
+    private ProductResponseDTO toResponseDTO(Product product) {
+        return new ProductResponseDTO(
+                product.getId(),
+                product.getName(),
+                product.getPrice()
+        );
     }
 }
