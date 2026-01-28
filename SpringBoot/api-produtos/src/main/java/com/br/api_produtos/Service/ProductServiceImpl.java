@@ -52,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponseDTO update(Long id, ProductRequestDTO dto) {
         Product product = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Produto não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id \" + id + \" not found\""));
 
         product.setName(dto.getName());
         product.setPrice(dto.getPrice());
