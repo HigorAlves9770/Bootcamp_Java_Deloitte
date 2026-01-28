@@ -13,14 +13,14 @@ public class ProductService {
 
     public ProductService(ProductRepository repository) {
         this.repository = repository;
-<<<<<<< HEAD
+
     }
 
     public Product create(Product product) {
         return repository.save(product);
     }
 
-=======
+
     }
 
     // CREATE
@@ -29,27 +29,25 @@ public class ProductService {
     }
 
     // READ BY ID
->>>>>>> main
+
     public Product findById(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
     }
 
-<<<<<<< HEAD
-=======
     // READ ALL
     public List<Product> returnAll() {
         return repository.findAll();
     }
 
     // UPDATE
->>>>>>> main
+
     public Product update(Long id, Product product) {
         Product existing = findById(id);
 
         existing.setName(product.getName());
         existing.setPrice(product.getPrice());
-<<<<<<< HEAD
+
         return repository.save(existing);
     }
 
@@ -59,7 +57,7 @@ public class ProductService {
 
     public void delete(Long id) {
         repository.deleteById(id);
-=======
+
 
         return repository.save(existing);
     }
@@ -69,5 +67,4 @@ public class ProductService {
         Product product = findById(id);
         repository.delete(product);
     }
->>>>>>> main
 }

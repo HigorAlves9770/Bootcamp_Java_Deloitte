@@ -17,32 +17,31 @@ public class ProductController {
         this.service = service;
     }
 
-    // CREATE
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Product create(@RequestBody Product product) {
         return service.create(product);
     }
 
-    // READ BY ID
+
     @GetMapping("/{id}")
     public Product findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
-    // READ ALL
+
     @GetMapping
     public List<Product> returnAll() {
         return service.returnAll();
     }
 
-    // UPDATE
+
     @PutMapping("/{id}")
     public Product update(@PathVariable Long id, @RequestBody Product product) {
         return service.update(id, product);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
