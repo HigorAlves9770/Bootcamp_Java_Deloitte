@@ -2,8 +2,17 @@ package com.br.api_produtos.Controller;
 
 import com.br.api_produtos.Model.Product;
 import com.br.api_produtos.Service.ProductService;
+import com.br.api_produtos.dto.ProductRequestDTO;
+import com.br.api_produtos.dto.ProductResponseDTO;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+/* Classe responsável por receber as requisições HTTP, validar os dados e delegar as regras de negócio
+para a camada de serviço (ProductService) */
+
+/*Class responsible for handling HTTP requests, validating data, and delegating business rules to the service layer (ProductService) */
+
 
 import java.util.List;
 
@@ -17,29 +26,44 @@ public class ProductController {
         this.service = service;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody Product product) {
-        return service.create(product);
+    public ProductResponseDTO create(@RequestBody @Valid ProductRequestDTO dto) {
+        return service.create(dto);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     @GetMapping("/{id}")
-    public Product findById(@PathVariable Long id) {
+    public ProductResponseDTO findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     @GetMapping
-    public List<Product> returnAll() {
-        return service.returnAll();
+    public List<ProductResponseDTO> findAll() {
+        return service.findAll();
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     @PutMapping("/{id}")
-    public Product update(@PathVariable Long id, @RequestBody Product product) {
-        return service.update(id, product);
+    public ProductResponseDTO update(
+            @PathVariable Long id,
+            @RequestBody @Valid ProductRequestDTO dto
+    ) {
+        return service.update(id, dto);
     }
 
     @DeleteMapping("/{id}")

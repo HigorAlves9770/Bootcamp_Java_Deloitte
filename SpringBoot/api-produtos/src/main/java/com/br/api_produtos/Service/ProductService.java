@@ -1,16 +1,16 @@
 package com.br.api_produtos.Service;
 
-import com.br.api_produtos.Model.Product;
-import com.br.api_produtos.Repository.ProductRepository;
-import org.springframework.stereotype.Service;
+import com.br.api_produtos.dto.ProductRequestDTO;
+import com.br.api_produtos.dto.ProductResponseDTO;
 
 import java.util.List;
 
-@Service
-public class ProductService {
+// Interface responsável pelo contrato da camada de serviço para Product
+// Interface responsible for defining the service layer contract for Product
 
-    private final ProductRepository repository;
+public interface ProductService {
 
+<<<<<<< HEAD
     public ProductService(ProductRepository repository) {
         this.repository = repository;
 
@@ -22,24 +22,26 @@ public class ProductService {
 
 
     }
+=======
+    ProductResponseDTO create(ProductRequestDTO dto);
+>>>>>>> main
 
-    // CREATE
-    public Product create(Product product) {
-        return repository.save(product);
-    }
+    ProductResponseDTO findById(Long id);
 
+<<<<<<< HEAD
     // READ BY ID
 
     public Product findById(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
     }
+=======
+    List<ProductResponseDTO> findAll();
+>>>>>>> main
 
-    // READ ALL
-    public List<Product> returnAll() {
-        return repository.findAll();
-    }
+    ProductResponseDTO update(Long id, ProductRequestDTO dto);
 
+<<<<<<< HEAD
     // UPDATE
 
     public Product update(Long id, Product product) {
@@ -67,4 +69,7 @@ public class ProductService {
         Product product = findById(id);
         repository.delete(product);
     }
+=======
+    void delete(Long id);
+>>>>>>> main
 }
