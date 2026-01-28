@@ -1,5 +1,6 @@
 package com.br.api_produtos.Service;
 
+import com.br.api_produtos.Mapper.ProductMapper;
 import com.br.api_produtos.Model.Product;
 import com.br.api_produtos.Repository.ProductRepository;
 import com.br.api_produtos.dto.ProductRequestDTO;
@@ -15,21 +16,19 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository repository;
+    private final ProductMapper mapper;
 
-    public ProductServiceImpl(ProductRepository repository) {
+    public ProductServiceImpl(ProductRepository repository, ProductMapper mapper) {
         super();
         this.repository = repository;
+        this.mapper = mapper;
     }
 
     @Override
     public ProductResponseDTO create(ProductRequestDTO dto) {
-        Product product = new Product();
-        product.setName(dto.getName());
-        product.setPrice(dto.getPrice());
-
+        Product product = mapper.toEntity(dto);
         Product saved = repository.save(product);
-
-        return toResponseDTO(saved);
+        return mapper.toResponse(saved);
     }
 
     @Override
@@ -37,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
         Product product = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
 
-        return toResponseDTO(product);
+        return mapper.toResponse(product);
     }
 
 
@@ -45,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductResponseDTO> findAll() {
         return repository.findAll()
                 .stream()
-                .map(this::toResponseDTO)
+                .map(mapper::toResponse)
                 .toList();
     }
 
@@ -57,9 +56,7 @@ public class ProductServiceImpl implements ProductService {
         product.setName(dto.getName());
         product.setPrice(dto.getPrice());
 
-        Product updated = repository.save(product);
-
-        return toResponseDTO(updated);
+        return mapper.toResponse(repository.save(product));
     }
 
     @Override
