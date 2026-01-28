@@ -1,5 +1,6 @@
 package com.br.api_produtos.Service;
 
+import com.br.api_produtos.Exception.ResourceNotFoundException;
 import com.br.api_produtos.Mapper.ProductMapper;
 import com.br.api_produtos.Model.Product;
 import com.br.api_produtos.Repository.ProductRepository;
@@ -34,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponseDTO findById(Long id) {
         Product product = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Produto não encontrado"));
 
         return mapper.toResponse(product);
     }
@@ -51,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponseDTO update(Long id, ProductRequestDTO dto) {
         Product product = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Produto não encontrado"));
 
         product.setName(dto.getName());
         product.setPrice(dto.getPrice());
@@ -62,7 +63,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void delete(Long id) {
         if (!repository.existsById(id)) {
-            throw new RuntimeException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
         repository.deleteById(id);
     }
