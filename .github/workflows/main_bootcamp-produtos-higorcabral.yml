@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - bootcamp-produtos-HigorCabral
+name: Build and deploy JAR app to Azure Web App - Bootcamp-produtos-HigorCabral
 
 on:
   push:
@@ -49,15 +49,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9B253F780BAC4E4CA6073C197D313900 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_126F3C6057F644F9BDCF32AF9C0B8923 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8B505357E4E84619B45676927B023FAF }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B078FED0349945BAAD94CC818D6E8B76 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DA84F1ECB07143DBB6CFD80F6152F21C }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0B923953E9674A4CBC12A95FF24BA9F7 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'bootcamp-produtos-HigorCabral'
+          app-name: 'Bootcamp-produtos-HigorCabral'
           slot-name: 'Production'
           package: '*.jar'
           
