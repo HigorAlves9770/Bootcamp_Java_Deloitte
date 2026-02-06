@@ -52,13 +52,6 @@
             <version>2.5.0</version>
         </dependency>
 
-        <!-- SQL SERVER -->
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- H2 -->
         <dependency>
             <groupId>com.h2database</groupId>
