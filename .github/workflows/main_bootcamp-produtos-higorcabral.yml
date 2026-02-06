@@ -44,6 +44,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: app-jar
+          path: app-jar  # pasta onde o artefato será baixado
 
       - name: Login na Azure
         uses: azure/login@v2
@@ -56,5 +57,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: bootcamp-produtos-HigorCabral
-          slot-name: Production
-          package: '*.jar'
+          package: 'app-jar/*.jar'
