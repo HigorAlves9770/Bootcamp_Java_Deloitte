@@ -22,13 +22,13 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
-        working-directory: api-produtos
+        working-directory: SpringBoot/api-produtos
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: 'api-produtos/target/*.jar'
+          path: 'SpringBoot/api-produtos/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,3 +53,4 @@ jobs:
           app-name: 'bootcamp-produtos-HigorCabral'
           slot-name: 'Production'
           package: '*.jar'
+
