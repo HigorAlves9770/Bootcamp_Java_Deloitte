@@ -90,6 +90,115 @@ Este projeto foi hospedado na **Microsoft Azure**, garantindo que a aplicação 
 | PUT    | /products/{id} | Atualizar produto          |
 | DELETE | /products/{id} | Remover produto            |
 
+## ▶️ Executando a Aplicação Localmente
+
+### 🛠️ Requisitos Necessários
+Antes de iniciar, verifique se os seguintes itens estão instalados:
+
+- ☕ **Java JDK 17 ou superior**
+- 🔧 **Maven 3.6+**  
+  > *(Opcional: o projeto já possui o Maven Wrapper)*
+
+---
+
+### ▶️ Como Iniciar o Projeto
+
+1. Navegue até o diretório do projeto:
+
+```bash
+# Navegar para a pasta do projeto
+cd SpringBoot/api-produtos
+
+# Executar com Maven Wrapper (Windows)
+.\mvnw.cmd spring-boot:run
+
+# Executar com Maven Wrapper (Linux/Mac)
+./mvnw spring-boot:run
+
+# Ou com Maven instalado
+mvn spring-boot:run
+
+
+```
+
+Aplicação rodando em: http://localhost:8080
+
+O frontend está hospedado junto ao backend em src/main/resources/static/, então ao acessar http://localhost:8080 você verá a interface web completa.
+
+Acessar Recursos
+
+🌐 Frontend: http://localhost:8080
+
+📚 Swagger UI: http://localhost:8080/swagger-ui.html
+
+🗄️ H2 Console: http://localhost:8080/h2-console
+
+Credenciais H2:
+
+JDBC URL: jdbc:h2:file:./data/produtosdb
+
+User: sa
+
+Password: (deixe vazio)
+
+
+## 📁 Estrutura do Projeto
+
+```text
+produtos-api/
+├── src/main/
+│   ├── java/com/br/api_produtos/
+│   │   ├── Controller/
+│   │   ├── Service/
+│   │   ├── Repository/
+│   │   ├── dto/
+│   │   ├── Model/
+│   │   ├── Mapper/
+│   │   ├── Configuration/
+│   │   └── Exception/
+│   │
+│   └── resources/
+│       ├── static/
+│       │   └── assets/
+│       └── application.yml
+│
+├── pom.xml
+└── README.md
+
+```
+
+# 🚀 Deploy de Aplicação Spring Boot no Azure App Service (Sem FTP)
+
+1️⃣ Instalar Azure CLI (Windows)
+
+Execute no **PowerShell como Administrador**:
+
+```powershell
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi
+Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
+Remove-Item .\AzureCLI.msi
+
+az login
+
+cd CAMINHO_DO_SEU_PROJETO
+
+az webapp deploy `
+  --resource-group NOME_DO_RESOURCE_GROUP ` (azure)
+  --name NOME_DO_APP_SERVICE ` (azure)
+  --src-path target\application.jar `
+  --type jar
+
+```
+Configurar o Commander
+```
+java -jar /home/site/wwwroot/app.jar
+```
+
+Configurar o .Jar
+```
+Verifique se o arquivo foi renomeado para `app.jar` e está em `/home/site/wwwroot/`
+```
+
 <h2>👨‍💻 Criador</h2>
 <table> <tr> <td align="center"> <a href="https://www.linkedin.com/in/higor-cabrall/"> <img src="https://avatars.githubusercontent.com/u/104106899?s=400&u=6ae8d212fe0462f9af2b7b1227276bd78b9dcf51&v=4" width="100px;" alt="Foto de Higor Cabral"/> <br/> <sub><b>Higor Cabral</b></sub> </a> </td> </tr> </table>
 
