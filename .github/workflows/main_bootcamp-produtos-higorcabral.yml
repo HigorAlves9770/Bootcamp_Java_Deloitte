@@ -1,4 +1,4 @@
-name: Build and deploy JAR app to Azure Web App - bootcamp-produtos-HigorCabral
+name: Build and Deploy Spring Boot App to Azure
 
 on:
   push:
@@ -7,28 +7,32 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write
   contents: read
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-java@v4
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
         with:
-          java-version: '21'
           distribution: 'temurin'
+          java-version: '21'
+          cache: maven  
 
-      - name: Build with Maven
+      - name: Build com Maven
         run: mvn clean package -DskipTests
         working-directory: SpringBoot/api-produtos
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload do artefato
+        uses: actions/upload-artifact@v4
         with:
-          name: java-app
+          name: app-jar
           path: SpringBoot/api-produtos/target/*.jar
 
   deploy:
@@ -36,17 +40,20 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/download-artifact@v4
+      - name: Download do artefato
+        uses: actions/download-artifact@v4
         with:
-          name: java-app
+          name: app-jar
 
-      - uses: azure/login@v2
+      - name: Login na Azure
+        uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1684CE2BCA004FBEA3EBAD71C776EB42 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_60A17446F61441CD9A0D461296C66ECC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_ABB30AE313A742C3A398732AC0AB917D }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - uses: azure/webapps-deploy@v3
+      - name: Deploy no Azure App Service
+        uses: azure/webapps-deploy@v3
         with:
           app-name: bootcamp-produtos-HigorCabral
           slot-name: Production
