@@ -19,7 +19,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # 🔥 AQUI ESTÁ A CORREÇÃO
+  
       - name: Build with Maven
         run: mvn clean package -DskipTests
         working-directory: api-produtos
@@ -53,3 +53,4 @@ jobs:
           app-name: 'bootcamp-produtos-HigorCabral'
           slot-name: 'Production'
           package: '*.jar'
+
