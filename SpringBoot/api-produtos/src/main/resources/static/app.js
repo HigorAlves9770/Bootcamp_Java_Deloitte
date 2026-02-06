@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/products";
+const API_URL = "https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/products";
 
 let editingId = null;
 
