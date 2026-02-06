@@ -15,12 +15,14 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "bootcamp-produtos-higorcabral.azurewebsites.net",
+                                "https://bootcamp-produtos-higorcabral.azurewebsites.net",
                                 "http://localhost:5500"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*");
+                        .allowedHeaders("*")
+                        .allowCredentials(false);
             }
         };
     }
 }
+
