@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8081/products";
+const API_URL = "http://localhost:8080/products";
 
 let editingId = null;
 
