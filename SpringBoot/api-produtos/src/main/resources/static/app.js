@@ -42,14 +42,24 @@ async function loadProducts() {
 async function saveProduct(event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value;
+    const name = document.getElementById("name").value.trim();
     const price = parseFloat(document.getElementById("price").value);
+
+    if (!name) {
+        showToast("O nome do produto não pode ficar vazio!");
+        return;
+    }
+
+    if (isNaN(price) || price <= 0) {
+    showToast("O preço deve ser maior que zero!", true);
+    return;
+    }
 
     const product = { name, price };
 
     try {
         if (editingId === null) {
-            // CREATE
+
             await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -58,7 +68,7 @@ async function saveProduct(event) {
 
             showToast("Produto cadastrado com sucesso!");
         } else {
-            // UPDATE
+
             await fetch(`${API_URL}/${editingId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
@@ -72,6 +82,7 @@ async function saveProduct(event) {
         loadProducts();
     } catch (error) {
         console.error("Erro ao salvar produto:", error);
+        showToast("Erro ao salvar produto!");
     }
 }
 
@@ -113,10 +124,24 @@ function resetForm() {
 }
 
 
-function showToast(message) {
+function showToast(message, isError = false) {
     const toastEl = document.getElementById("toast");
-    document.getElementById("toastMsg").innerText = message;
+    const toastMsg = document.getElementById("toastMsg");
 
-    const toast = new bootstrap.Toast(toastEl);
-    toast.show();
+    // limpa tudo
+    toastEl.className = "toast align-items-center border-0 text-white";
+
+    // define a cor
+    if (isError) {
+        toastEl.style.backgroundColor = "#dc3545";
+    } else {
+        toastEl.style.backgroundColor = "#198754";
+    }
+
+    toastMsg.innerText = message;
+
+    bootstrap.Toast.getOrCreateInstance(toastEl).show();
 }
+
+
+

@@ -69,8 +69,9 @@ button i {
     color: #fff;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    padding: 1.5rem 0;
+    padding: 1.0rem 0;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -132,4 +133,19 @@ button i {
         margin-left: 8px;
         margin-right: 8px;
     }
+}
+
+.toast.text-bg-danger {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.toast.text-bg-success {
+    background-color: #198754 !important;
+    color: #fff !important;
+}
+
+.toast.text-bg-warning {
+    background-color: #ffc107 !important;
+    color: #000 !important;
 }
