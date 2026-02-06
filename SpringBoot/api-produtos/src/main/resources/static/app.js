@@ -2,16 +2,11 @@ const API_URL = "http://localhost:8080/products";
 
 let editingId = null;
 
-// =========================
-// INIT
-// =========================
 document.addEventListener("DOMContentLoaded", () => {
     loadProducts();
 });
 
-// =========================
-// LOAD PRODUCTS
-// =========================
+
 async function loadProducts() {
     try {
         const response = await fetch(API_URL);
@@ -44,9 +39,6 @@ async function loadProducts() {
     }
 }
 
-// =========================
-// SAVE (CREATE / UPDATE)
-// =========================
 async function saveProduct(event) {
     event.preventDefault();
 
@@ -83,9 +75,6 @@ async function saveProduct(event) {
     }
 }
 
-// =========================
-// EDIT
-// =========================
 async function editProduct(id) {
     try {
         const response = await fetch(`${API_URL}/${id}`);
@@ -101,9 +90,6 @@ async function editProduct(id) {
     }
 }
 
-// =========================
-// DELETE
-// =========================
 async function deleteProduct(id) {
     if (!confirm("Deseja realmente excluir este produto?")) return;
 
@@ -119,18 +105,14 @@ async function deleteProduct(id) {
     }
 }
 
-// =========================
-// FORM RESET
-// =========================
+
 function resetForm() {
     document.querySelector("form").reset();
     editingId = null;
     document.getElementById("formTitle").innerText = "Novo Produto";
 }
 
-// =========================
-// TOAST
-// =========================
+
 function showToast(message) {
     const toastEl = document.getElementById("toast");
     document.getElementById("toastMsg").innerText = message;

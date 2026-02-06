@@ -9,9 +9,7 @@ body {
     font-family: system-ui, sans-serif;
 }
 
-/* =========================
-   TOPBAR
-   ========================= */
+
 .topbar {
     background: var(--verde-vale);
     color: white;
@@ -27,9 +25,6 @@ body {
     font-weight: 600;
 }
 
-/* =========================
-   LOGOTIPO VALE
-   ========================= */
 .vale-logo {
     height: 34px;
     max-width: 120px;
@@ -43,39 +38,27 @@ body {
     transform: scale(1.04);
 }
 
-/* =========================
-   CONTENT
-   ========================= */
+
 .content {
     padding: 2rem;
 }
 
-/* =========================
-   CARDS
-   ========================= */
 .card-header {
     background: linear-gradient(90deg, var(--verde-vale), var(--ocre));
     color: white;
     font-weight: 600;
 }
 
-/* =========================
-   TABLE
-   ========================= */
+
 table th {
     background-color: #eef2ef;
 }
 
-/* =========================
-   BUTTON ICONS
-   ========================= */
 button i {
     margin-right: 6px;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+
 @media (max-width: 768px) {
     .topbar {
         padding: 1rem;
