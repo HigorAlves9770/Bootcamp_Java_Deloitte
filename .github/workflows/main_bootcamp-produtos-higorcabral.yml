@@ -23,7 +23,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-          cache: maven  
+          cache: maven
 
       - name: Build com Maven
         run: mvn clean package -DskipTests
@@ -48,9 +48,9 @@ jobs:
       - name: Login na Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1684CE2BCA004FBEA3EBAD71C776EB42 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_60A17446F61441CD9A0D461296C66ECC }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_ABB30AE313A742C3A398732AC0AB917D }}
 
       - name: Deploy no Azure App Service
         uses: azure/webapps-deploy@v3
