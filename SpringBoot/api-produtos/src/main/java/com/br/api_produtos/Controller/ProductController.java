@@ -16,6 +16,7 @@ para a camada de serviço (ProductService) */
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/products")
 public class ProductController {
