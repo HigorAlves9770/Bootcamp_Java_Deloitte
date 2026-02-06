@@ -61,19 +61,18 @@ Arquitetura baseada em **SRP (Single Responsibility Principle)** e **DIP (Depend
 
 ## ☁️ Hospedagem na Azure
 
-Este projeto foi hospedado na **Microsoft Azure**, garantindo que a aplicação esteja disponível online para testes e demonstração.  
+Este projeto foi hospedado na **Microsoft Azure**, garantindo que a aplicação esteja disponível online para demonstração.  
 
 - **Serviço utilizado:** Azure App Service  
 - **Runtime:** Java 21 + Spring Boot  
-- **URL de acesso:** [https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/](https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/)  
+- **URL de acesso:** [https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/](https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/)
+- **Swagger**: [https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/swagger-ui/index.html#/](https://bootcamp-produtos-higoralves-aagac7e6aecyfvb7.brazilsouth-01.azurewebsites.net/swagger-ui/index.html#/)
 - **Configuração:** Variáveis de ambiente configuradas no App Service para conexão com o banco de dados.  
 - **Deploy:** Realizado diretamente do GitHub via integração contínua.  
 
 > 🔹 A hospedagem na Azure permite que o backend esteja sempre online, pronto para ser acessado pelo frontend ou por qualquer cliente que consuma a API.
 
 ## 🎨 Layout
-
-O layout da aplicação (frontend) está disponível no Figma:
 
 ### Web
 
